@@ -1,12 +1,18 @@
+import Container from "./components/Container"
+import HashtagList from "./components/HashtagList"
 
 
 function App() {
 
 
   return (
-    <>
-      test
-    </>
+    <div className="app">
+
+
+      <Container />
+
+      <HashtagList />
+    </div>
   )
 }
 
