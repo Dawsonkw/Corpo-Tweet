@@ -6,7 +6,7 @@ import Pattern from "./Pattern";
 
 function Header() {
     return (
-        <div>
+        <div >
             <Pattern />
             <Logo /> 
             <PageHeading />

@@ -1,10 +1,7 @@
-import React from 'react';
 
-function Pattern(props) {
+function Pattern() {
     return (
-        <div>
-            
-        </div>
+        <img src="https://bytegrad.com/course-assets/js/1/pattern.svg" alt="Pattern logo" className="pattern" />
     );
 }
 

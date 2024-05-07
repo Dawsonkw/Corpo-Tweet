@@ -1,6 +1,6 @@
-import React from 'react';
 
-function PageHeading(props) {
+
+function PageHeading() {
     return (
         <div>
             
