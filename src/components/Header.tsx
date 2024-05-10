@@ -6,12 +6,13 @@ import Pattern from "./Pattern";
 
 function Header() {
     return (
-        <div >
-            <Pattern />
-            <Logo /> 
-            <PageHeading />
-            <FeedbackForm />
-        </div>
+        
+            <header>
+                <Pattern />
+                <Logo />
+                <PageHeading />
+                <FeedbackForm />
+            </header>
     );
 }
 
