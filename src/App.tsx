@@ -6,24 +6,37 @@ import { TFeedbackItem } from "./lib/types";
 function App() {
   const [feedbackItems, setFeedbackItems] = useState<TFeedbackItem[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleAddToList = (text: string) => {
-    const companyName = text
-      .split("")
-      .find((word) => word.includes("#"))!
-      .substring(1);
+  const handleAddToList = async (text: string) => {
+    const words = text.split(" ");
+    const hashtagWord = words.find((word) => word.startsWith("#"));
+
+    let companyName = "";
+    if (hashtagWord) {
+      companyName = hashtagWord.substring(1);
+    }
 
     const newItem: TFeedbackItem = {
       id: new Date().getTime(),
       text: text,
       upvoteCount: 0,
       daysAgo: 0,
-      badgeLetter: companyName.substring(0, 1).toUpperCase(),
-      companyName: companyName,
+      badgeLetter: companyName.charAt(0).toUpperCase(),
+      company: companyName,
     };
 
+
     setFeedbackItems([...feedbackItems, newItem]);
+
+    await fetch("https://bytegrad.com/course-assets/projects/corpcomment/api/feedbacks", {
+      method: "POST",
+      body: JSON.stringify(newItem),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      }
+    });
   };
 
   useEffect(() => {
