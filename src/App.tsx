@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Container from "./components/Container";
+import Container from "./components/layout/Container";
 import HashtagList from "./components/HashtagList";
 import { TFeedbackItem } from "./lib/types";
 
