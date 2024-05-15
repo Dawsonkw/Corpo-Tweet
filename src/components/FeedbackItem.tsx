@@ -1,30 +1,24 @@
 import { ArrowUpIcon } from "@radix-ui/react-icons";
+import { TFeedbackItem } from "../lib/types";
 
-type FeedbackItem = {
-  upvoteCount: number;
-  badgeLetter: string;
-  companyName: string;
-  text: string;
-  daysAgo: number;
-};
 
-type FeedbackItemProps = { feedbackItem: FeedbackItem };
+type FeedbackItemProps = { feedbackItems: TFeedbackItem };
 
-function FeedbackItem({ feedbackItem }: FeedbackItemProps) {
+function FeedbackItem({ feedbackItems }: FeedbackItemProps) {
   return (
     <li className="feedback">
       <button>
         <ArrowUpIcon />
-        <span>{feedbackItem.upvoteCount}</span>
+        <span>{feedbackItems.upvoteCount}</span>
       </button>
       <div>
-        <p>{feedbackItem.badgeLetter}</p>
+        <p>{feedbackItems.badgeLetter}</p>
       </div>
       <div>
-        <p>{feedbackItem.companyName}</p>
-        <p>{feedbackItem.text}</p>
+        <p>{feedbackItems.companyName}</p>
+        <p>{feedbackItems.text}</p>
       </div>
-      <p>{feedbackItem.daysAgo}d</p>
+      <p>{feedbackItems.daysAgo}d</p>
     </li>
   );
 }
