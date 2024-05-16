@@ -4,20 +4,18 @@ import PageHeading from "../PageHeading";
 import Pattern from "../Pattern";
 
 type HeaderProps = {
-    handleAddToList: (text: string) => void;
-}
+  handleAddToList: (text: string) => void;
+};
 
-
-function Header({ handleAddToList}: HeaderProps) {
-    return (
-        
-            <header>
-                <Pattern />
-                <Logo />
-                <PageHeading />
-                <FeedbackForm onAddToList={handleAddToList} />
-            </header>
-    );
+function Header({ handleAddToList }: HeaderProps) {
+  return (
+    <header>
+      <Pattern />
+      <Logo />
+      <PageHeading />
+      <FeedbackForm onAddToList={handleAddToList} />
+    </header>
+  );
 }
 
 export default Header;
