@@ -497,11 +497,17 @@ form button span::selection {
   position: absolute;
   right: -137px;
   top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0 0 0 20px;
+  gap: 11px;
 }
 
 .hashtags li {
   max-width: max-content;
   margin-bottom: 11px;
+  padding-left: 10px;
 }
 
 /* HASHTAG */

@@ -1,15 +1,17 @@
+import { useFeedbackItemsContext } from "../../lib/hooks";
 import HashtagItem from "./HashtagItem";
 
-type HashtagListProps = {
-  companyList: string[];
-  handleSelectCompany: (company: string) => void;
-};
+function HashtagList() {
+  const { companyList, handleSelectCompany } = useFeedbackItemsContext();
 
-function HashtagList({ companyList, handleSelectCompany }: HashtagListProps) {
   return (
     <ul className="hashtags">
       {companyList.map((company) => (
-        <HashtagItem company={company} onSelectCompany={handleSelectCompany} />
+        <HashtagItem
+          key={company}
+          company={company}
+          onSelectCompany={handleSelectCompany}
+        />
       ))}
     </ul>
   );
